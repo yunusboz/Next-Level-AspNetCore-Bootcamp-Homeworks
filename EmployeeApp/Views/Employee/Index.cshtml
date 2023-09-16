@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Employee>
+
+<div class="text-center">
+    <h1 class="display-4">Employees</h1>
+
+    <div class="d-flex justify-content-end my-3">
+        <a class="btn btn-outline-success" asp-action="Create">
+            <i class="fa-solid fa-square-plus"></i> Create New Employee
+        </a>
+    </div>
+
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Title</th>
+                <th>Methods</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var employee in Model)
+            {
+                <tr>
+                    <td>@employee.FirstName</td>
+                    <td>@employee.LastName</td>
+                    <td>@employee.Title</td>
+                    <td>
+                        <a class="btn btn-info" asp-controller="Order" asp-action="Index" asp-route-id="@employee.EmployeeId">
+                            <i class="fa fa-search"></i> Orders
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>

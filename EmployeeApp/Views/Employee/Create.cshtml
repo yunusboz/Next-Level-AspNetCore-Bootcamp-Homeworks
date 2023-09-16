@@ -1,0 +1,38 @@
+﻿@model Employee
+
+<div class="text-center">
+    <h1 class="display-6">Create Employee</h1>
+</div>
+
+<form method="post" asp-action="Create">
+
+    <div class="text-danger" asp-validation-summary="All"></div>
+
+    <div class="form-group my-3">
+        <label>First Name</label>
+        <input type="text" asp-for="FirstName" class="form-control" />
+    </div>
+
+    <div class="form-group my-3">
+        <label>Last Name</label>
+        <input type="text" asp-for="LastName" class="form-control" />
+    </div>
+
+    <div class="form-group my-3">
+        <label asp-for="Title"></label>
+        <input type="text" asp-for="Title" class="form-control" />
+    </div>
+
+    <div class="form-group my-3">
+        <div class="btn-group">
+            <button class="btn btn-primary" type="submit">
+                <i class="fa fa-save"></i> Save
+            </button>
+
+            <a asp-action="Index" class="btn btn-outline-primary">
+                <i class="fa fa-list"></i> Employees
+            </a>
+        </div>
+    </div>
+
+</form>
